@@ -3,3 +3,30 @@ langchain-community
 langchain-google-genai
 chromadb
 google-generativeai
+fastapi
+uvicorn[standard]
+python-dotenv
+
+# Gemini / OpenAI SDKs
+openai
+google-generativeai
+
+# Vector DB for RAG
+chromadb
+
+# LLM integration and embeddings
+langchain
+sentence-transformers
+tiktoken
+
+# Parsing and scanning utils
+beautifulsoup4
+lxml
+pyyaml
+
+# Optional: for PDF/text/code loaders
+unstructured
+pdfminer.six
+
+# If you're using asyncio
+httpx

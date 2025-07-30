@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: hercules-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/data:/app/backend/data
+      - ./backend/rag/chroma_db:/app/backend/rag/chroma_db
+    env_file:
+      - .env
+    depends_on:
+      - chromadb
+
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    container_name: hercules-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+  chromadb:
+    image: chromadb/chroma
+    container_name: hercules-chromadb
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./backend/rag/chroma_db:/chroma/chroma_db
