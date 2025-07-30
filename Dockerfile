@@ -1,16 +1,13 @@
-# backend/Dockerfile
+# Dockerfile (at project root)
+
 FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy backend files
-COPY backend /app/backend
-COPY main.py /app/main.py
-COPY requirements.txt /app/requirements.txt
-COPY .env /app/.env
-COPY keys /app/keys
+# Copy entire project into container
+COPY . .
 
-# Install dependencies
+# Install Python dependencies
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 EXPOSE 8000
