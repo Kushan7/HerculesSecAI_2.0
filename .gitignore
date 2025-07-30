@@ -1,0 +1,4 @@
+# Prevent committing secrets
+*.json
+keys/*.json
+.env

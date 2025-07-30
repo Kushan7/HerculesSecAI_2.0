@@ -7,8 +7,7 @@ import os
 import vertexai
 from vertexai.generative_models import GenerativeModel
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:/Users/class/HerculesSec_2.0/keys/gemini-access.json"
-
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 vertexai.init(
     project="beaming-bliss-336315",   # 🛠️ Replace this
     location="us-central1"
