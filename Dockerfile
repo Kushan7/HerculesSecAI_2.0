@@ -4,11 +4,11 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Copy backend files
-COPY . /app/backend
-COPY ../main.py /app/main.py
-COPY ../requirements.txt /app/requirements.txt
-COPY ../.env /app/.env
-COPY ../keys /app/keys
+COPY backend /app/backend
+COPY main.py /app/main.py
+COPY requirements.txt /app/requirements.txt
+COPY .env /app/.env
+COPY keys /app/keys
 
 # Install dependencies
 RUN pip install --upgrade pip && pip install -r requirements.txt
