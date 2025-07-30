@@ -1,0 +1,31 @@
+OWASP Top 10 - 2023
+
+1. Broken Access Control
+Description: Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data.
+
+2. Cryptographic Failures
+Description: Previously known as "Sensitive Data Exposure", this category focuses on failures related to cryptography which often lead to exposure of sensitive data.
+
+3. Injection
+Description: Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query.
+
+4. Insecure Design
+Description: Focuses on risks related to design and architectural flaws, including threat modeling and secure design principles.
+
+5. Security Misconfiguration
+Description: This is the most common issue. Misconfiguration can happen at any level of an application stack, including network services, platform, web server, app server, database, etc.
+
+6. Vulnerable and Outdated Components
+Description: Using components with known vulnerabilities may undermine application defenses and enable attacks and impacts.
+
+7. Identification and Authentication Failures
+Description: Previously known as "Broken Authentication", this category covers failures in authentication and session management.
+
+8. Software and Data Integrity Failures
+Description: This category focuses on code and infrastructure that does not protect against integrity violations, such as unsigned software updates or deserialization flaws.
+
+9. Security Logging and Monitoring Failures
+Description: This category focuses on the lack of proper logging and monitoring which can lead to delayed or undetected breaches.
+
+10. Server-Side Request Forgery (SSRF)
+Description: SSRF flaws occur when a web application is fetching a remote resource without validating the user-supplied URL, allowing attackers to force the server to make requests to unintended destinations.
