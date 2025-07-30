@@ -6,9 +6,9 @@ google-generativeai
 fastapi
 uvicorn[standard]
 python-dotenv
+axios
 
 # Gemini / OpenAI SDKs
-openai
 google-generativeai
 
 # Vector DB for RAG
@@ -17,7 +17,7 @@ chromadb
 # LLM integration and embeddings
 langchain
 sentence-transformers
-tiktoken
+#tiktoken
 
 # Parsing and scanning utils
 beautifulsoup4
@@ -25,8 +25,8 @@ lxml
 pyyaml
 
 # Optional: for PDF/text/code loaders
-unstructured
-pdfminer.six
+#unstructured
+#pdfminer.six
 
 # If you're using asyncio
 httpx
