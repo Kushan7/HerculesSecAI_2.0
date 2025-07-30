@@ -7,6 +7,7 @@ fastapi
 uvicorn[standard]
 python-dotenv
 axios
+google-cloud-aiplatform
 
 # Gemini / OpenAI SDKs
 google-generativeai
