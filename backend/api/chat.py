@@ -21,3 +21,7 @@ async def chat(request: ChatRequest):
     except Exception as e:
         print(f"Error analyzing vulnerabilities: {e}")
         raise HTTPException(status_code=500, detail="Internal error analyzing vulnerabilities")
+@router.post("/chat")
+async def chat(request: ChatRequest):
+    result = await analyze_vulnerabilities(request.question)
+    return {"answer": result}
