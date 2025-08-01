@@ -1,5 +1,6 @@
 # backend/rag/analyzer.py
 
+
 from vertexai.language_models import ChatModel, InputOutputTextPair
 from vertexai.preview.generative_models import GenerativeModel
 from typing import List
@@ -7,7 +8,17 @@ import os
 import vertexai
 from vertexai.generative_models import GenerativeModel
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # 👈 this loads variables from .env
+
+credentials_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+if credentials_path:
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+else:
+    raise EnvironmentError("GOOGLE_APPLICATION_CREDENTIALS not found in environment or .env file.")
+
 vertexai.init(
     project="beaming-bliss-336315",   # 🛠️ Replace this
     location="us-central1"
@@ -30,7 +41,7 @@ def analyze_vulnerabilities(docs: List[str], user_code: str = "") -> str:
 
     # Prompt for LLM
     prompt = f"""
-You are a cybersecurity expert. Analyze the following context and source code for OWASP Top 10 vulnerabilities. 
+You are a Offensive security certified cybersecurity expert. Analyze the following context and source code for OWASP Top 10 vulnerabilities. 
 If any security flaws exist, mention their category (e.g., XSS, Injection), severity (Low, Medium, High), and suggest improvements.
 
 --- Context from documentation ---

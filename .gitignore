@@ -2,4 +2,4 @@
 *.json
 keys/*.json
 .env
-gemini-access.json
+./keys/gemini-access.json
